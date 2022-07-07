@@ -1,0 +1,16 @@
+@use 'sass:color';
+@import 'variables';
+@import 'mixins';
+
+button {
+    @include border;
+    padding: 5px 15px;
+    background: $bg-accent;
+    color: $text-color;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:hover {
+    background: color.adjust($bg-accent, $lightness: -5%);
+}
