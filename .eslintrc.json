@@ -1,0 +1,33 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2022,
+    "project": "./tsconfig.eslint.json"
+  },
+  "plugins": ["@typescript-eslint/eslint-plugin", "import", "react"],
+  "extends": [
+    "airbnb",
+    "airbnb-typescript"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "rules": {
+    "@typescript-eslint/indent": 0,
+    "indent": 0,
+    "arrow-body-style": 0,
+    "react/jsx-indent": 0,
+    "react/function-component-definition": 0
+  }
+}
