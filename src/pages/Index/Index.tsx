@@ -1,11 +1,11 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
-import './App.scss';
+import './Index.scss';
 
-export default function App() {
+export default function Index() {
     return (
-        <div className="App">
+        <div className="Index">
             <Navbar title="Tic Tac Toe" />
             <Outlet />
         </div>
