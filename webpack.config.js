@@ -35,7 +35,7 @@ module.exports = {
           loader: 'sass-loader',
           options: {
             sassOptions: {
-              includePaths: ['src/styles'],
+              includePaths: ['public/assets/scss'],
             },
           },
         }],
