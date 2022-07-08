@@ -1,11 +1,12 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import App from './App';
+import App from './pages/App';
 import Home from './pages/Home';
 
-const root = createRoot(document.getElementById('root')!);
-root.render((
+const container = document.getElementById('root')!;
+
+createRoot(container).render((
     <BrowserRouter>
         <Routes>
             <Route path="/" element={<App />}>
