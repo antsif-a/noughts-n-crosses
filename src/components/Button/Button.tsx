@@ -1,13 +1,18 @@
-import React, { FC, HTMLProps } from 'react';
-import './Button.module.scss';
+import React, { HTMLProps } from 'react';
+import ButtonStyles from './Button.module.scss';
 
 interface ButtonProps extends HTMLProps<HTMLButtonElement> {
     type?: 'button' | 'submit' | 'reset';
+    border?: boolean;
 }
 
-const Button: FC<ButtonProps> = ({ children, ...props }) => {
+function Button({ children, className, border, ...props }: ButtonProps) {
+    const classNames = border === false
+        ? ButtonStyles.button
+        : [ButtonStyles.button, ButtonStyles.border].join(' ');
+
     return (
-        <button {...props}>
+        <button {...props} className={className || classNames}>
             {children}
         </button>
     );

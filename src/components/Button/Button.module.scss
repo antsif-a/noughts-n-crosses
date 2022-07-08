@@ -2,15 +2,20 @@
 @import 'variables';
 @import 'mixins';
 
-button {
-    @include border;
+.button {
     padding: 5px 15px;
     background: $bg-accent;
     color: $text-color;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
+    border: none;
+    background: transparent;
 }
 
-button:hover {
-    background: color.adjust($bg-accent, $lightness: -5%);
+.button:hover {
+    color: color.adjust($text-color, $lightness: -10%);
+}
+
+.border {
+    @include border;
 }
