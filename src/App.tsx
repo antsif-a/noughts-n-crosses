@@ -1,14 +1,13 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
+import { Outlet } from 'react-router-dom';
+import Navbar from './components/Navbar';
 import './App.scss';
 
 export default function App() {
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Home />} />
-            </Routes>
-        </BrowserRouter>
+        <div className="app">
+            <Navbar title="Tic Tac Toe" />
+            <Outlet />
+        </div>
     );
 }

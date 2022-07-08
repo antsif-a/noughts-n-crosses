@@ -27,20 +27,17 @@ export default function Home() {
     };
 
     return (
-        <>
-            <h1 className="title">Tic-tac-toe</h1>
-            <div className="container">
-                <Board
-                  turn={turn}
-                  setTurn={setTurn}
-                  cells={cells}
-                  setCells={setCells}
-                />
-                <Info
-                  turn={turn}
-                  onReset={onReset}
-                />
-            </div>
-        </>
+        <div className="container">
+            <Board
+              turn={turn}
+              setTurn={setTurn}
+              cells={cells}
+              setCells={setCells}
+            />
+            <Info
+              turn={turn}
+              onReset={onReset}
+            />
+        </div>
     );
 }
