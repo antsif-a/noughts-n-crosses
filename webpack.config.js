@@ -11,6 +11,7 @@ module.exports = {
     port: 8000,
     watchFiles: 'src',
     hot: true,
+    historyApiFallback: true,
   },
   output: {
     path: path.resolve(__dirname, 'public'),
