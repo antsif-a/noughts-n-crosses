@@ -4,3 +4,41 @@
     border: $border;
     border-radius: $border-radius;
 }
+
+@mixin flex {
+    display: flex;
+}
+
+@mixin flex-center($x: false, $y: false) {
+    @if ($x) {
+        justify-content: center;
+    }
+
+    @if ($y) {
+        align-items: center;
+    }
+}
+
+@mixin flex-space-between {
+    justify-content: space-between;
+}
+
+@mixin absolute {
+    position: absolute;
+}
+
+@mixin absolute-center($x: false, $y: false) {
+    @if ($x) {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    @if ($y) {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    @if ($x and $y) {
+        transform: translate(-50%, -50%);
+    }
+}

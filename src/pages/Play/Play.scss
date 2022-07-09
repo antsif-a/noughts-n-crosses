@@ -1,4 +1,7 @@
-.Play {
-    display: flex;
+@import 'mixins';
 
+.Play {
+    @include flex;
+    @include absolute;
+    @include absolute-center($x: true, $y: true);
 }

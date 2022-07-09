@@ -5,9 +5,9 @@ import './Index.scss';
 
 export default function Index() {
     return (
-        <div className="Index">
+        <>
             <Navbar title="Tic Tac Toe" />
             <Outlet />
-        </div>
+        </>
     );
 }
