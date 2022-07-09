@@ -3,7 +3,7 @@ import { Player } from '../../types/Player';
 import { CellData } from '../../types/CellData';
 import Board from '../../components/Board';
 import Info from '../../components/Info';
-import './Play.scss';
+import './Game.scss';
 
 function initialCells(quantity = 9): CellData[] {
     const cells: CellData[] = [];
@@ -17,7 +17,7 @@ function initialCells(quantity = 9): CellData[] {
     return cells;
 }
 
-function Play() {
+function Game() {
     const [turn, setTurn] = useState(Player.X);
     const [cells, setCells] = useState(initialCells());
 
@@ -27,7 +27,7 @@ function Play() {
     };
 
     return (
-        <div className="Play">
+        <div className="Game">
             <Board
               turn={turn}
               setTurn={setTurn}
@@ -42,4 +42,4 @@ function Play() {
     );
 }
 
-export default Play;
+export default Game;

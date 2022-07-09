@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Index from './pages/Index';
 import Home from './pages/Home';
-import Play from './pages/Play';
+import Game from './pages/Game';
 
 function App() {
     return (
@@ -10,7 +10,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Index />}>
                     <Route index element={<Home />} />
-                    <Route path="play" element={<Play />} />
+                    <Route path="game" element={<Game />} />
                 </Route>
             </Routes>
         </BrowserRouter>
