@@ -1,5 +1,6 @@
 import React, { HTMLProps } from 'react';
 import ButtonStyles from './Button.module.scss';
+import useStyles from '../../hooks/useStyles';
 
 interface ButtonProps extends HTMLProps<HTMLButtonElement> {
     type?: 'button' | 'submit' | 'reset';
@@ -7,15 +8,18 @@ interface ButtonProps extends HTMLProps<HTMLButtonElement> {
 }
 
 function Button({ children, className, border, ...props }: ButtonProps) {
-    const classNames = border === false
-        ? ButtonStyles.button
-        : [ButtonStyles.button, ButtonStyles.border].join(' ');
+    const classNames = useStyles(ButtonStyles.button, border && ButtonStyles.border, className);
 
     return (
-        <button {...props} className={className || classNames}>
+        <button {...props} className={classNames}>
             {children}
         </button>
     );
+}
+
+Button.defaultProps = {
+    type: 'button',
+    border: true,
 };
 
 export default Button;
