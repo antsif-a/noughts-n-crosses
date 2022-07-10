@@ -2,6 +2,7 @@
 
 .Game {
     @include flex;
+    flex-direction: column;
     @include absolute;
     @include absolute-center($x: true, $y: true);
 }

@@ -12,10 +12,11 @@ interface InfoProps {
 
 function Info({ turn, winner, onReset }: InfoProps) {
     return (
-        <div className={InfoStyles.info}>
-            <div>
-                <p>Turn: <Player player={turn} /></p>
-                <p>Winner: <Player player={winner} defaultValue="-" /></p>
+        <div>
+            <div className={InfoStyles.info}>
+                <div className={InfoStyles.separator} />
+                <h3>Turn: <Player player={turn} /></h3>
+                <h3>Winner: <Player player={winner} defaultValue="-" /></h3>
             </div>
             <Button onClick={() => onReset()}>Reset</Button>
         </div>
