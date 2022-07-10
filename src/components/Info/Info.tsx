@@ -1,28 +1,22 @@
 import React from 'react';
 import Button from '../ui/Button';
-import { Player } from '../../types/Player';
+import Player from '../Player';
+import { PlayerType } from '../../types/PlayerType';
 import InfoStyles from './Info.module.scss';
 
 interface InfoProps {
-    turn: Player;
+    turn: PlayerType;
+    winner: PlayerType | undefined;
     onReset: () => void;
 }
 
-function Info({ turn, onReset }: InfoProps) {
-    const renderTurn = (turn: Player) => {
-        switch (turn) {
-            case Player.X:
-                return 'X';
-            case Player.O:
-                return 'O';
-            default:
-                return '-';
-        }
-    };
-
+function Info({ turn, winner, onReset }: InfoProps) {
     return (
         <div className={InfoStyles.info}>
-            <p>Turn: {renderTurn(turn)}</p>
+            <div>
+                <p>Turn: <Player player={turn} /></p>
+                <p>Winner: <Player player={winner} defaultValue="-" /></p>
+            </div>
             <Button onClick={() => onReset()}>Reset</Button>
         </div>
     );

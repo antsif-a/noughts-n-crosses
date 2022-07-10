@@ -4,10 +4,7 @@ import { CellData } from '../types/CellData';
 function initialCells(quantity = 9): CellData[] {
     const cells: CellData[] = [];
     for (let i = 0; i < quantity; i++) {
-        cells.push({
-            id: i,
-            owner: null,
-        });
+        cells.push({ id: i });
     }
 
     return cells;

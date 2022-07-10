@@ -1,12 +1,12 @@
 import React from 'react';
-import { Player } from '../../types/Player';
+import { PlayerType } from '../../types/PlayerType';
 import { CellData } from '../../types/CellData';
 import Cell from '../Cell/Cell';
 import BoardStyles from './Board.module.scss';
 
 interface BoardProps {
-    turn: Player;
-    setTurn: (turn: Player) => void;
+    turn: PlayerType;
+    setTurn: (turn: PlayerType) => void;
     cells: CellData[];
     setCells: (cells: CellData[]) => void;
 }
@@ -23,7 +23,7 @@ function Board({
             if (cell.id === id) {
                 tempCells[i].owner = turn;
                 setCells(tempCells);
-                setTurn(turn === Player.X ? Player.O : Player.X);
+                setTurn(turn === PlayerType.X ? PlayerType.O : PlayerType.X);
                 return true;
             }
 

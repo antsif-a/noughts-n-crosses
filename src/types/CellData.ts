@@ -1,6 +1,6 @@
-import { Player } from './Player';
+import { PlayerType } from './PlayerType';
 
 export interface CellData {
     id: number;
-    owner: Player | null;
+    owner?: PlayerType;
 }

@@ -1,17 +1,22 @@
-import React, { useState } from 'react';
-import { Player } from '../../types/Player';
+import React, { useEffect, useState } from 'react';
+import { PlayerType } from '../../types/PlayerType';
 import Board from '../../components/Board';
 import Info from '../../components/Info';
 import useCells from '../../hooks/useCells';
+import useWinner from '../../hooks/useWinner';
 import './Game.scss';
 
 function Game() {
-    const [turn, setTurn] = useState(Player.X);
+    const [turn, setTurn] = useState(PlayerType.X);
     const { cells, setCells, resetCells } = useCells();
+    const { winner, updateWinner, resetWinner } = useWinner();
+
+    useEffect(() => updateWinner(cells), [turn]);
 
     const onReset = () => {
-        setTurn(Player.X);
+        setTurn(PlayerType.X);
         resetCells();
+        resetWinner();
     };
 
     return (
@@ -24,6 +29,7 @@ function Game() {
             />
             <Info
               turn={turn}
+              winner={winner}
               onReset={onReset}
             />
         </div>
