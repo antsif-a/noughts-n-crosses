@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../Button';
+import Button from '../ui/Button';
 import { CellData } from '../../types/CellData';
 import { Player } from '../../types/Player';
 import CellStyles from './Cell.module.scss';
@@ -10,7 +10,7 @@ interface CellProps {
 }
 
 function renderCellState(cell: CellData) {
-    switch (cell.state) {
+    switch (cell.owner) {
         case Player.X:
             return 'X';
         case Player.O:
@@ -27,7 +27,7 @@ function Cell({ cell, onClick }: CellProps) {
         <div className={CellStyles.cell}>
             <Button
               onClick={onClick}
-              disabled={cell.state !== null}
+              disabled={cell.owner !== null}
             >
                 {renderCellState(cell)}
             </Button>

@@ -10,7 +10,7 @@ function initialCells(quantity = 9): CellData[] {
     for (let i = 0; i < quantity; i++) {
         cells.push({
             id: i,
-            state: null,
+            owner: null,
         });
     }
 

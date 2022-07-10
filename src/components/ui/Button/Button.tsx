@@ -1,6 +1,6 @@
 import React, { HTMLProps } from 'react';
 import ButtonStyles from './Button.module.scss';
-import useStyles from '../../hooks/useStyles';
+import useStyles from '../../../hooks/useStyles';
 
 interface ButtonProps extends HTMLProps<HTMLButtonElement> {
     type?: 'button' | 'submit' | 'reset';

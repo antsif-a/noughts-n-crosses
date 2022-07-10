@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Button from '../../components/Button';
+import Button from '../../components/ui/Button';
 import { PlayIcon } from '../../icons';
 import './Home.scss';
 
@@ -12,7 +12,7 @@ export default function Home() {
             <Button
               className="play-button"
               border={false}
-              onClick={() => navigate('play')}
+              onClick={() => navigate('game')}
             >
                 <PlayIcon width={240} />
             </Button>

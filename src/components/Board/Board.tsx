@@ -21,7 +21,7 @@ function Board({
         const tempCells = [...cells];
         tempCells.some((cell, i) => {
             if (cell.id === id) {
-                tempCells[i].state = turn;
+                tempCells[i].owner = turn;
                 setCells(tempCells);
                 setTurn(turn === Player.X ? Player.O : Player.X);
                 return true;
