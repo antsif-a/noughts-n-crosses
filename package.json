@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "webpack-dev-server"
+    "build": "webpack",
+    "serve": "webpack-dev-server",
+    "lint": "eslint --cache ./",
+    "lint:fix": "eslint --cache --fix ./"
   },
   "dependencies": {
     "react": "^18.2.0",
