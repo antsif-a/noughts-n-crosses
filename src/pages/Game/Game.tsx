@@ -1,21 +1,20 @@
 import React from 'react';
 import { PlayerType } from '../../types/PlayerType';
 import Modal from '../../components/ui/Modal';
-import Player from '../../components/Player';
 import Board from '../../components/Board';
 import Info from '../../components/Info';
-import useCells from '../../hooks/useCells';
 import useWinner from '../../hooks/useWinner';
 import useReusableState from '../../hooks/useReusableState';
 import useModal from '../../hooks/useModal';
+import generateCells from '../../helpers/generateCells';
 import './Game.scss';
 
 function Game() {
     const [turn, setTurn, resetTurn] = useReusableState(PlayerType.X);
-    const { cells, setCells, resetCells } = useCells();
+    const [cells, setCells, resetCells] = useReusableState(generateCells());
     const { winner, resetWinner } = useWinner(cells, turn);
     const { modalActive, setModalActive } = useModal([winner], () => {
-        return winner === PlayerType.X || winner === PlayerType.O;
+        return winner !== PlayerType.none;
     });
 
     const onReset = () => {
@@ -32,8 +31,7 @@ function Game() {
     return (
       <>
           <Modal active={modalActive} onClose={onModalClose}>
-              Winner:
-              <Player player={winner} />
+              <p>Winner: {winner}</p>
           </Modal>
           <div className="Game">
               <Board

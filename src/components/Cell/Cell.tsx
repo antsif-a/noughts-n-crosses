@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '../ui/Button';
-import Player from '../Player';
+import { PlayerType } from '../../types/PlayerType';
 import { CellData } from '../../types/CellData';
 import CellStyles from './Cell.module.scss';
 
@@ -14,9 +14,9 @@ function Cell({ cell, onClick }: CellProps) {
         <div className={CellStyles.cell}>
             <Button
               onClick={onClick}
-              disabled={cell.owner !== undefined}
+              disabled={cell.owner !== PlayerType.none}
             >
-                <Player player={cell.owner} />
+                {cell.owner !== PlayerType.none && cell.owner}
             </Button>
         </div>
     );

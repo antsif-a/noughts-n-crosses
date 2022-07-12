@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo } from 'react';
 import { CellData } from '../types/CellData';
 import { PlayerType } from '../types/PlayerType';
 import useReusableState from './useReusableState';
@@ -9,7 +9,7 @@ function checkCells(...cells: CellData[]) {
 }
 
 function checkRow(cells: CellData[], rowLength: number, row: number) {
-    return cells[row * rowLength].owner !== undefined && checkCells(
+    return cells[row * rowLength].owner !== PlayerType.none && checkCells(
         cells[row * rowLength],
         cells[1 + row * rowLength],
         cells[2 + row * rowLength],
@@ -17,7 +17,7 @@ function checkRow(cells: CellData[], rowLength: number, row: number) {
 }
 
 function checkColumn(cells: CellData[], columnLength: number, column: number) {
-    return cells[column].owner !== undefined && checkCells(
+    return cells[column].owner !== PlayerType.none && checkCells(
       cells[column],
       cells[column + columnLength],
       cells[column + columnLength * 2],
@@ -25,7 +25,7 @@ function checkColumn(cells: CellData[], columnLength: number, column: number) {
 }
 
 function checkDiagonal(cells: CellData[], diagonalLength: number, diagonal: number) {
-    return cells[diagonalLength + 1].owner !== undefined && checkCells(
+    return cells[diagonalLength + 1].owner !== PlayerType.none && checkCells(
       cells[diagonal === 0 ? 0 : diagonalLength - 1],
       cells[diagonalLength + 1],
       cells[diagonal === 0 ? diagonalLength ** 2 - 1 : diagonalLength * 2],
@@ -33,7 +33,7 @@ function checkDiagonal(cells: CellData[], diagonalLength: number, diagonal: numb
 }
 
 export default function useWinner(cells: CellData[], turn: PlayerType) {
-    const [winner, setWinner, resetWinner] = useReusableState<PlayerType | undefined>(undefined);
+    const [winner, setWinner, resetWinner] = useReusableState<PlayerType>(PlayerType.none);
 
     const lineLength = useMemo(() => Math.sqrt(cells.length), cells);
 

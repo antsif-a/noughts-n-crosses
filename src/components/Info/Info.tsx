@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from '../ui/Button';
 import Separator from '../ui/Separator';
-import Player from '../Player';
 import { PlayerType } from '../../types/PlayerType';
 import InfoStyles from './Info.module.scss';
 
@@ -15,7 +14,7 @@ function Info({ turn, onReset }: InfoProps) {
         <div>
             <Separator />
             <div className={InfoStyles.info}>
-                <h3>Turn: <Player player={turn} /></h3>
+                <h3>Turn: {turn}</h3>
                 <Button onClick={() => onReset()}>Reset</Button>
             </div>
         </div>
