@@ -24,7 +24,7 @@ function checkColumn(cells: CellData[], columnLength: number, column: number) {
 }
 
 function checkDiagonal(cells: CellData[], diagonalLength: number, diagonal: number) {
-    return cells[diagonal === 0 ? 0 : diagonalLength - 1].owner !== undefined && checkCells(
+    return cells[diagonalLength + 1].owner !== undefined && checkCells(
       cells[diagonal === 0 ? 0 : diagonalLength - 1],
       cells[diagonalLength + 1],
       cells[diagonal === 0 ? diagonalLength ** 2 - 1 : diagonalLength * 2],
