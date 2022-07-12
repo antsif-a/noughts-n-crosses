@@ -9,13 +9,13 @@ interface NavbarProps {
 }
 
 function Navbar({ title }: NavbarProps) {
-    const location = useLocation();
+    const { pathname } = useLocation();
 
     return (
         <nav className={NavbarStyles.navbar}>
             <h1>{title}</h1>
             <div>
-                {location.pathname !== '/' && <NavbarItem to="/" icon={<HomeIcon width={24} />} />}
+                {pathname !== '/' && <NavbarItem to="/" icon={<HomeIcon width={24} />} />}
             </div>
         </nav>
     );

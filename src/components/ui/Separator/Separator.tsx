@@ -3,7 +3,7 @@ import SeparatorStyles from './Separator.module.scss';
 
 function Separator() {
     return (
-      <div className={SeparatorStyles.separator} />
+        <div className={SeparatorStyles.separator} />
     );
 }
 

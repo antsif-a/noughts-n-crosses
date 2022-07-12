@@ -1,11 +1,11 @@
 import { useEffect, useMemo } from 'react';
-import { CellData } from '../types/CellData';
-import { PlayerType } from '../types/PlayerType';
+import CellData from '../types/CellData';
+import PlayerType from '../types/PlayerType';
 import useReusableState from './useReusableState';
 
 function checkCells(...cells: CellData[]) {
     return cells.every((c) => c.owner === PlayerType.X)
-      || cells.every((c) => c.owner === PlayerType.O);
+        || cells.every((c) => c.owner === PlayerType.O);
 }
 
 function checkRow(cells: CellData[], rowLength: number, row: number) {
@@ -18,17 +18,17 @@ function checkRow(cells: CellData[], rowLength: number, row: number) {
 
 function checkColumn(cells: CellData[], columnLength: number, column: number) {
     return cells[column].owner !== PlayerType.none && checkCells(
-      cells[column],
-      cells[column + columnLength],
-      cells[column + columnLength * 2],
+        cells[column],
+        cells[column + columnLength],
+        cells[column + columnLength * 2],
     );
 }
 
 function checkDiagonal(cells: CellData[], diagonalLength: number, diagonal: number) {
     return cells[diagonalLength + 1].owner !== PlayerType.none && checkCells(
-      cells[diagonal === 0 ? 0 : diagonalLength - 1],
-      cells[diagonalLength + 1],
-      cells[diagonal === 0 ? diagonalLength ** 2 - 1 : diagonalLength * 2],
+        cells[diagonal === 0 ? 0 : diagonalLength - 1],
+        cells[diagonalLength + 1],
+        cells[diagonal === 0 ? diagonalLength ** 2 - 1 : diagonalLength * 2],
     );
 }
 

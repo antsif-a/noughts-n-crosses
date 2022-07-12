@@ -1,5 +1,6 @@
 import React from 'react';
-import { PlayerType } from '../../types/PlayerType';
+import PlayerType from '../../types/PlayerType';
+import Separator from '../../components/ui/Separator';
 import Modal from '../../components/ui/Modal';
 import Board from '../../components/Board';
 import Info from '../../components/Info';
@@ -13,9 +14,7 @@ function Game() {
     const [turn, setTurn, resetTurn] = useReusableState(PlayerType.X);
     const [cells, setCells, resetCells] = useReusableState(generateCells());
     const { winner, resetWinner } = useWinner(cells, turn);
-    const { modalActive, setModalActive } = useModal([winner], () => {
-        return winner !== PlayerType.none;
-    });
+    const { modalActive, setModalActive } = useModal(() => winner !== PlayerType.none, [winner]);
 
     const onReset = () => {
         resetTurn();
@@ -29,23 +28,24 @@ function Game() {
     };
 
     return (
-      <>
-          <Modal active={modalActive} onClose={onModalClose}>
-              <p>Winner: {winner}</p>
-          </Modal>
-          <div className="Game">
-              <Board
-                turn={turn}
-                setTurn={setTurn}
-                cells={cells}
-                setCells={setCells}
-              />
-              <Info
-                turn={turn}
-                onReset={onReset}
-              />
-          </div>
-      </>
+        <>
+            <Modal active={modalActive} onClose={onModalClose}>
+                <p>Winner: {winner}</p>
+            </Modal>
+            <div className="Game">
+                <Board
+                    turn={turn}
+                    setTurn={setTurn}
+                    cells={cells}
+                    setCells={setCells}
+                />
+                <Separator />
+                <Info
+                    turn={turn}
+                    onReset={onReset}
+                />
+            </div>
+        </>
     );
 }
 

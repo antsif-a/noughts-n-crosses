@@ -7,11 +7,13 @@ interface ButtonProps extends HTMLProps<HTMLButtonElement> {
     border?: boolean;
 }
 
-function Button({ children, className, border, ...props }: ButtonProps) {
+function Button({
+    children, className, border, ...props
+}: ButtonProps) {
     const classNames = mergeStyles(ButtonStyles.button, border && ButtonStyles.border, className);
 
     return (
-        <button {...props} className={classNames}>
+        <button type="button" {...props} className={classNames}>
             {children}
         </button>
     );

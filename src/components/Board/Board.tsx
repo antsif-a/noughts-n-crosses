@@ -1,6 +1,6 @@
 import React from 'react';
-import { PlayerType } from '../../types/PlayerType';
-import { CellData } from '../../types/CellData';
+import PlayerType from '../../types/PlayerType';
+import CellData from '../../types/CellData';
 import Cell from '../Cell';
 import BoardStyles from './Board.module.scss';
 
@@ -35,9 +35,9 @@ function Board({
         <div className={BoardStyles.board}>
             {cells.map((cell) => (
                 <Cell
-                  key={cell.id}
-                  cell={cell}
-                  onClick={() => onCellClick(cell.id)}
+                    key={cell.id}
+                    cell={cell}
+                    onClick={() => onCellClick(cell.id)}
                 />
             ))}
         </div>

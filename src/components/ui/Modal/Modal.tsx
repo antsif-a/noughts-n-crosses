@@ -11,17 +11,19 @@ function Modal({ children, active, onClose }: ModalProps) {
     const classNames = mergeStyles(ModalStyles.modal, active && ModalStyles.active);
 
     return (
-      <div
-        className={classNames}
-        onClick={onClose}
-      >
-          <div
-            className={ModalStyles.content}
-            onClick={(e) => e.stopPropagation()}
-          >
-              {children}
-          </div>
-      </div>
+        <div
+          className={classNames}
+          onClick={onClose}
+          role="dialog"
+        >
+            <div
+              className={ModalStyles.content}
+              onClick={(e) => e.stopPropagation()}
+              role="dialog"
+            >
+                {children}
+            </div>
+        </div>
     );
 }
 

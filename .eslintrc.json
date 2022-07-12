@@ -5,13 +5,10 @@
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
     "ecmaVersion": 2022,
     "project": "./tsconfig.eslint.json"
   },
-  "plugins": ["@typescript-eslint/eslint-plugin", "import", "react"],
+  "plugins": ["@typescript-eslint/eslint-plugin", "import"],
   "extends": [
     "airbnb",
     "airbnb-typescript"
@@ -24,10 +21,15 @@
     }
   },
   "rules": {
-    "@typescript-eslint/indent": 0,
-    "indent": 0,
-    "arrow-body-style": 0,
-    "react/jsx-indent": 0,
-    "react/function-component-definition": 0
+    "@typescript-eslint/indent": "off",
+    "react/jsx-indent": "off",
+    "react/jsx-indent-props": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-props-no-spreading": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "no-restricted-exports": "off",
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
   }
 }

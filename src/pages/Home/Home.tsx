@@ -10,9 +10,9 @@ export default function Home() {
     return (
         <div className="Home">
             <Button
-              className="play-button"
-              border={false}
-              onClick={() => navigate('game')}
+                className="play-button"
+                border={false}
+                onClick={() => navigate('game')}
             >
                 <PlayIcon width={240} />
             </Button>

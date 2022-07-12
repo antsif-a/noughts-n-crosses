@@ -1,6 +1,6 @@
-import { PlayerType } from './PlayerType';
+import PlayerType from './PlayerType';
 
-export interface CellData {
+export default interface CellData {
     id: number;
     owner: PlayerType;
 }
