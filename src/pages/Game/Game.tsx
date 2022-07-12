@@ -1,5 +1,5 @@
 import React from 'react';
-import PlayerType from '../../types/PlayerType';
+import PlayerType from '../../models/PlayerType';
 import Separator from '../../components/ui/Separator';
 import Modal from '../../components/ui/Modal';
 import Board from '../../components/Board';

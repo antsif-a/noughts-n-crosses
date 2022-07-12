@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from 'react';
-import CellData from '../types/CellData';
-import PlayerType from '../types/PlayerType';
+import CellData from '../models/CellData';
+import PlayerType from '../models/PlayerType';
 import useReusableState from './useReusableState';
 
 function checkCells(...cells: CellData[]) {

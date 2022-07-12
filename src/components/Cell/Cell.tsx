@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '../ui/Button';
-import PlayerType from '../../types/PlayerType';
-import CellData from '../../types/CellData';
+import PlayerType from '../../models/PlayerType';
+import CellData from '../../models/CellData';
 import CellStyles from './Cell.module.scss';
 
 interface CellProps {

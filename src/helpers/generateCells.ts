@@ -1,5 +1,5 @@
-import CellData from '../types/CellData';
-import PlayerType from '../types/PlayerType';
+import CellData from '../models/CellData';
+import PlayerType from '../models/PlayerType';
 
 export default function generateCells(quantity = 9): CellData[] {
     const cells: CellData[] = [];
