@@ -1,0 +1,25 @@
+@import 'variables';
+@import 'mixins';
+
+.modal {
+    display: none;
+    background: rgba(0, 0, 0, .5);
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    .content {
+        padding: 15px;
+        background: white;
+        border-radius: 10px;
+        min-width: 250px;
+    }
+}
+
+.active {
+    @include flex;
+    @include flex-center($x: true, $y: true);
+}

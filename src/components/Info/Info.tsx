@@ -1,24 +1,23 @@
 import React from 'react';
 import Button from '../ui/Button';
+import Separator from '../ui/Separator';
 import Player from '../Player';
 import { PlayerType } from '../../types/PlayerType';
 import InfoStyles from './Info.module.scss';
 
 interface InfoProps {
     turn: PlayerType;
-    winner: PlayerType | undefined;
     onReset: () => void;
 }
 
-function Info({ turn, winner, onReset }: InfoProps) {
+function Info({ turn, onReset }: InfoProps) {
     return (
         <div>
+            <Separator />
             <div className={InfoStyles.info}>
-                <div className={InfoStyles.separator} />
                 <h3>Turn: <Player player={turn} /></h3>
-                <h3>Winner: <Player player={winner} defaultValue="-" /></h3>
+                <Button onClick={() => onReset()}>Reset</Button>
             </div>
-            <Button onClick={() => onReset()}>Reset</Button>
         </div>
     );
 }

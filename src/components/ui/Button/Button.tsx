@@ -1,6 +1,6 @@
 import React, { HTMLProps } from 'react';
 import ButtonStyles from './Button.module.scss';
-import useStyles from '../../../hooks/useStyles';
+import mergeStyles from '../../../helpers/mergeStyles';
 
 interface ButtonProps extends HTMLProps<HTMLButtonElement> {
     type?: 'button' | 'submit' | 'reset';
@@ -8,7 +8,7 @@ interface ButtonProps extends HTMLProps<HTMLButtonElement> {
 }
 
 function Button({ children, className, border, ...props }: ButtonProps) {
-    const classNames = useStyles(ButtonStyles.button, border && ButtonStyles.border, className);
+    const classNames = mergeStyles(ButtonStyles.button, border && ButtonStyles.border, className);
 
     return (
         <button {...props} className={classNames}>

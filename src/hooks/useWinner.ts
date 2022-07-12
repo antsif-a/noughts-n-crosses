@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { CellData } from '../types/CellData';
 import { PlayerType } from '../types/PlayerType';
+import useReusableState from './useReusableState';
 
 function checkCells(...cells: CellData[]) {
     return cells.every((c) => c.owner === PlayerType.X)
@@ -32,7 +33,7 @@ function checkDiagonal(cells: CellData[], diagonalLength: number, diagonal: numb
 }
 
 export default function useWinner(cells: CellData[], turn: PlayerType) {
-    const [winner, setWinner] = useState<PlayerType>();
+    const [winner, setWinner, resetWinner] = useReusableState<PlayerType | undefined>(undefined);
 
     const lineLength = useMemo(() => Math.sqrt(cells.length), cells);
 
@@ -54,6 +55,6 @@ export default function useWinner(cells: CellData[], turn: PlayerType) {
 
     return {
         winner,
-        resetWinner: () => setWinner(undefined),
+        resetWinner,
     };
 }

@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { CellData } from '../types/CellData';
+import useReusableState from './useReusableState';
 
 function initialCells(quantity = 9): CellData[] {
     const cells: CellData[] = [];
@@ -11,7 +11,7 @@ function initialCells(quantity = 9): CellData[] {
 }
 
 export default function useCells() {
-    const [cells, setCells] = useState(initialCells());
+    const [cells, setCells] = useReusableState(initialCells());
 
     return {
         cells,
