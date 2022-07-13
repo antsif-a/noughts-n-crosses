@@ -32,10 +32,10 @@ function checkDiagonal(cells: CellData[], diagonalLength: number, diagonal: numb
     );
 }
 
-export default function useWinner(cells: CellData[], turn: PlayerType) {
+export default function useWinner(cells: CellData[]) {
     const [winner, setWinner, resetWinner] = useReusableState<PlayerType>(PlayerType.none);
 
-    const lineLength = useMemo(() => Math.sqrt(cells.length), cells);
+    const lineLength = useMemo(() => Math.sqrt(cells.length), [cells.length]);
 
     useEffect(() => {
         for (let i = 0; i < 2; i++) {
@@ -51,7 +51,7 @@ export default function useWinner(cells: CellData[], turn: PlayerType) {
                 setWinner(cells[i].owner);
             }
         }
-    }, [turn]);
+    }, [cells, lineLength]);
 
     return {
         winner,

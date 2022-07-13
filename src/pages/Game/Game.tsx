@@ -13,7 +13,7 @@ import './Game.scss';
 function Game() {
     const [turn, setTurn, resetTurn] = useReusableState(PlayerType.X);
     const [cells, setCells, resetCells] = useReusableState(generateCells());
-    const { winner, resetWinner } = useWinner(cells, turn);
+    const { winner, resetWinner } = useWinner(cells);
     const { modalActive, setModalActive } = useModal(() => winner !== PlayerType.none, [winner]);
 
     const onReset = () => {
