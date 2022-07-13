@@ -7,6 +7,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
+      "@public/*": ["public/*"],
     },
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,

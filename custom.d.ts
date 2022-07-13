@@ -1,5 +1,4 @@
 /// <reference types="react" />
-/// <reference types="react-dom" />
 
 declare module '*.svg' {
     export const ReactComponent: React.FunctionComponent<
