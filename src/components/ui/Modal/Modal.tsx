@@ -1,5 +1,5 @@
 import React, { HTMLProps } from 'react';
-import mergeStyles from '../../../helpers/mergeStyles';
+import mergeStyles from '@/helpers/mergeStyles';
 import ModalStyles from './Modal.module.scss';
 
 interface ModalProps extends HTMLProps<HTMLElement> {

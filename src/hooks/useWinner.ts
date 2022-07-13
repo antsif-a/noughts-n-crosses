@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from 'react';
-import CellData from '../models/CellData';
-import PlayerType from '../models/PlayerType';
-import useReusableState from './useReusableState';
+import useReusableState from '@/hooks/useReusableState';
+import CellData from '@/models/CellData';
+import PlayerType from '@/models/PlayerType';
 
 function checkCells(...cells: CellData[]) {
     return cells.every((c) => c.owner === PlayerType.X)

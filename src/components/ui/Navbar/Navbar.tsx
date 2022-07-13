@@ -1,8 +1,8 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import NavbarItem from '../NavbarItem';
+import NavbarItem from '@/components/ui/NavbarItem';
+import { HomeIcon } from '@/icons';
 import NavbarStyles from './Navbar.module.scss';
-import { HomeIcon } from '../../../icons';
 
 interface NavbarProps {
     title: string;

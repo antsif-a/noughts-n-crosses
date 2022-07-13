@@ -1,7 +1,7 @@
 import React from 'react';
-import PlayerType from '../../models/PlayerType';
-import CellData from '../../models/CellData';
-import Cell from '../Cell';
+import Cell from '@/components/Cell';
+import CellData from '@/models/CellData';
+import PlayerType from '@/models/PlayerType';
 import BoardStyles from './Board.module.scss';
 
 interface BoardProps {

@@ -1,6 +1,6 @@
 import React, { HTMLProps } from 'react';
+import mergeStyles from '@/helpers/mergeStyles';
 import ButtonStyles from './Button.module.scss';
-import mergeStyles from '../../../helpers/mergeStyles';
 
 interface ButtonProps extends HTMLProps<HTMLButtonElement> {
     type?: 'button' | 'submit' | 'reset';

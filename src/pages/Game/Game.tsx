@@ -1,13 +1,13 @@
 import React from 'react';
-import PlayerType from '../../models/PlayerType';
-import Separator from '../../components/ui/Separator';
-import Modal from '../../components/ui/Modal';
-import Board from '../../components/Board';
-import Info from '../../components/Info';
-import useWinner from '../../hooks/useWinner';
-import useReusableState from '../../hooks/useReusableState';
-import useModal from '../../hooks/useModal';
-import generateCells from '../../helpers/generateCells';
+import Board from '@/components/Board';
+import Info from '@/components/Info';
+import Modal from '@/components/ui/Modal';
+import Separator from '@/components/ui/Separator';
+import useModal from '@/hooks/useModal';
+import useReusableState from '@/hooks/useReusableState';
+import useWinner from '@/hooks/useWinner';
+import generateCells from '@/helpers/generateCells';
+import PlayerType from '@/models/PlayerType';
 import './Game.scss';
 
 function Game() {

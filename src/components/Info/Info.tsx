@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from '../ui/Button';
-import PlayerType from '../../models/PlayerType';
+import Button from '@/components/ui/Button';
+import PlayerType from '@/models/PlayerType';
 import InfoStyles from './Info.module.scss';
 
 interface InfoProps {

@@ -1,9 +1,14 @@
 const path = require('path');
 
+const resolveApp = (pathname) => path.resolve(__dirname, pathname);
+
 module.exports = {
-  entry: path.resolve(__dirname, 'src', 'index.tsx'),
+  entry: resolveApp('src/index'),
   mode: 'development',
   resolve: {
+    alias: {
+      '@': resolveApp('src'),
+    },
     extensions: ['.tsx', '.ts', '.js'],
   },
   devServer: {
@@ -14,17 +19,12 @@ module.exports = {
     historyApiFallback: true,
   },
   output: {
-    path: path.resolve(__dirname, 'public'),
+    path: resolveApp('public'),
     publicPath: '/dist/',
     filename: 'bundle.js',
   },
   module: {
     rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
-      },
       {
         test: /\.ts(x?)$/,
         exclude: /node_modules/,

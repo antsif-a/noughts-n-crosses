@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Index from './pages/Index';
-import Home from './pages/Home';
-import Game from './pages/Game';
+import Index from '@/pages/Index';
+import Home from '@/pages/Home';
+import Game from '@/pages/Game';
 
 function App() {
     return (

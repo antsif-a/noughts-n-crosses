@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Button from '../Button';
+import Button from '@/components/ui/Button';
 
 interface NavbarItemProps {
     to: string;
