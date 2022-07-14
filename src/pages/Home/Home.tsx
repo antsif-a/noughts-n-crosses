@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '@/components/ui/Button';
 import PlayIcon from '@/components/icons/Play';
-import './Home.scss';
+import './Home.module.scss';
 
 export default function Home() {
     const navigate = useNavigate();

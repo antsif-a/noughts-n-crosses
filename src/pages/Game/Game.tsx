@@ -8,7 +8,7 @@ import useReusableState from '@/hooks/useReusableState';
 import useWinner from '@/hooks/useWinner';
 import generateCells from '@/helpers/generateCells';
 import PlayerType from '@/models/PlayerType';
-import './Game.scss';
+import './Game.module.scss';
 
 function Game() {
     const [turn, setTurn, resetTurn] = useReusableState(PlayerType.X);
