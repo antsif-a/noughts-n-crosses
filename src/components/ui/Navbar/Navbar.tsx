@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import NavbarItem from '@/components/ui/NavbarItem';
-import HomeIcon from '@/icons/Home';
+import HomeIcon from '@/components/icons/Home';
 import NavbarStyles from './Navbar.module.scss';
 
 interface NavbarProps {

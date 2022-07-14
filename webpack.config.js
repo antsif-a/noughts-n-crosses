@@ -1,34 +1,46 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const resolveApp = (pathname) => path.resolve(__dirname, pathname);
+function resolveApp(pathname) {
+  return path.resolve(__dirname, pathname);
+}
 
 module.exports = {
   entry: resolveApp('src/index'),
+  output: {
+    path: resolveApp('build'),
+    filename: '[chunkhash].js',
+  },
   mode: 'development',
+  plugins: [
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: resolveApp('assets/index.html'),
+    }),
+  ],
   resolve: {
     alias: {
       '@': resolveApp('src'),
+      '@assets': resolveApp('assets'),
     },
     extensions: ['.tsx', '.ts', '.js'],
   },
   devServer: {
     compress: true,
-    port: 8000,
+    port: 3000,
     watchFiles: 'src',
     hot: true,
     historyApiFallback: true,
-  },
-  output: {
-    path: resolveApp('public'),
-    publicPath: '/dist/',
-    filename: 'bundle.js',
   },
   module: {
     rules: [
       {
         test: /\.ts(x?)$/,
-        exclude: /node_modules/,
-        loader: 'ts-loader',
+        use: 'ts-loader',
+      },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack', 'file-loader'],
       },
       {
         test: /\.s[ac]ss$/i,
@@ -36,33 +48,10 @@ module.exports = {
           loader: 'sass-loader',
           options: {
             sassOptions: {
-              includePaths: ['public/assets/scss'],
+              includePaths: [resolveApp('src/scss')],
             },
           },
         }],
-      },
-      {
-        test: /\.svg$/,
-        use: [
-          {
-            loader: '@svgr/webpack',
-            options: {
-              prettier: false,
-              svgo: false,
-              svgoConfig: {
-                plugins: [{ removeViewBox: false }],
-              },
-              titleProp: true,
-              ref: true,
-            },
-          },
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'static/media/[name].[hash].[ext]',
-            },
-          },
-        ],
       },
     ],
   },
