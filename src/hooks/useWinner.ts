@@ -40,7 +40,7 @@ export default function useWinner(cells: CellData[]) {
     useEffect(() => {
         for (let i = 0; i < 2; i++) {
             if (checkDiagonal(cells, lineLength, i)) {
-                setWinner(cells[i === 0 ? 0 : lineLength].owner);
+                setWinner(cells[lineLength + 1].owner);
             }
         }
 
