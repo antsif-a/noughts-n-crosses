@@ -8,7 +8,7 @@ import useReusableState from '@/hooks/useReusableState';
 import useWinner from '@/hooks/useWinner';
 import generateCells from '@/helpers/generateCells';
 import PlayerType from '@/models/PlayerType';
-import './Game.module.scss';
+import GameStyles from './Game.module.scss';
 
 function Game() {
     const [turn, setTurn, resetTurn] = useReusableState(PlayerType.X);
@@ -32,7 +32,7 @@ function Game() {
             <Modal active={modalActive} onClose={onModalClose}>
                 <p>Winner: {winner}</p>
             </Modal>
-            <div className="Game">
+            <div className={GameStyles.Game}>
                 <Board
                     turn={turn}
                     setTurn={setTurn}
