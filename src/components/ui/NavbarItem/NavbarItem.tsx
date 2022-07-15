@@ -1,19 +1,17 @@
 import React, { ReactNode } from 'react';
-import { useNavigate } from 'react-router-dom';
 import Button from '@/components/ui/Button';
 
+// TODO: Make a component similar to this with `link` property
 interface NavbarItemProps {
-    to: string;
+    onClick: () => void;
     icon: ReactNode | null;
 }
 
-function NavbarItem({ to, icon }: NavbarItemProps) {
-    const navigate = useNavigate();
-
+function NavbarItem({ onClick, icon }: NavbarItemProps) {
     return (
         <Button
           border={false}
-          onClick={() => navigate(to)}
+          onClick={onClick}
         >
             {icon}
         </Button>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '@/components/ui/Button';
-import PlayIcon from '@/components/icons/Play';
+import { PlayIcon } from '@/components/icons';
 import HomeStyles from './Home.module.scss';
 
 export default function Home() {
