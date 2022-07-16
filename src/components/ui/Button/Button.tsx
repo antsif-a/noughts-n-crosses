@@ -1,5 +1,5 @@
 import React, { HTMLProps } from 'react';
-import mergeStyles from '@/helpers/mergeStyles';
+import useThemeClassName from '@/hooks/useThemeClassName';
 import ButtonStyles from './Button.module.scss';
 
 interface ButtonProps extends HTMLProps<HTMLButtonElement> {
@@ -7,13 +7,9 @@ interface ButtonProps extends HTMLProps<HTMLButtonElement> {
     border?: boolean;
 }
 
-function Button({
-    children, className, border, ...props
-}: ButtonProps) {
-    const classNames = mergeStyles(ButtonStyles.button, border && ButtonStyles.border, className);
-
+function Button({ children, border, ...props }: ButtonProps) {
     return (
-        <button type="button" {...props} className={classNames}>
+        <button {...props} className={useThemeClassName(ButtonStyles.button, border ? ButtonStyles.border : '')}>
             {children}
         </button>
     );

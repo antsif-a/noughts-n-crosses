@@ -1,14 +1,24 @@
-@import 'variables';
-@import 'mixins';
+@use 'mixins/ui';
+@use 'mixins/themes';
 
 .navbar {
-    @include flex;
-    @include flex-space-between;
-    @include flex-center($y: true);
+    @include ui.flex;
+    @include ui.flex-space-between;
+    @include ui.flex-center($y: true);
+
+    @include themes.themes {
+        background: themes.theme-get(background-accent);
+        border-bottom: themes.theme-get(border);
+    }
+
     width: 100%;
     height: 50px;
     margin-bottom: 10px;
     padding: 0 15px;
-    background: $bg-accent;
-    border-bottom: $border;
+}
+
+.title {
+    @include themes.themes {
+        color: themes.theme-get(text);
+    }
 }

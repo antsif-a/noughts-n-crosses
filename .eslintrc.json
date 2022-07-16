@@ -23,6 +23,7 @@
   "rules": {
     "@typescript-eslint/indent": "off",
     "import/extensions": "off",
+    "react/button-has-type": "off",
     "react/jsx-indent": "off",
     "react/jsx-indent-props": "off",
     "react/jsx-one-expression-per-line": "off",

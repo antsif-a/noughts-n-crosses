@@ -1,25 +1,23 @@
-@use 'sass:color';
-@import 'variables';
-@import 'mixins';
+@use 'mixins/themes';
 
 .button {
+    @include themes.themes {
+        color: themes.theme-get(text);
+
+        &:not(:disabled):hover {
+            color: themes.theme-get(text-hover);
+        }
+    }
+
     padding: 5px 15px;
-    background: $bg-accent;
-    color: $text-color;
     cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
     border: none;
     background: transparent;
-}
 
-.button:hover {
-    color: color.adjust($text-color, $lightness: -10%);
-}
-
-.button:disabled:hover {
-    color: $text-color;
-}
-
-.border {
-    @include border;
+    &.border {
+        @include themes.themes {
+            border: themes.theme-get(border);
+            border-radius: themes.theme-get(border-radius);
+        }
+    }
 }

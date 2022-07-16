@@ -1,8 +1,7 @@
-@import 'variables';
-@import 'mixins';
+@use 'mixins/ui';
 
 .info {
-    @include flex;
-    @include flex-space-between;
+    @include ui.flex;
+    @include ui.flex-space-between;
     margin-bottom: 20px;
 }

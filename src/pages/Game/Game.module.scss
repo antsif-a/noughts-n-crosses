@@ -1,8 +1,8 @@
-@import 'mixins';
+@use 'mixins/ui';
 
 .Game {
-    @include flex;
-    flex-direction: column;
-    @include absolute;
-    @include absolute-center($x: true, $y: true);
+    @include ui.flex;
+    @include ui.flex-column;
+    @include ui.absolute;
+    @include ui.absolute-center($x: true, $y: true);
 }

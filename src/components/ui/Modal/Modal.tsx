@@ -1,6 +1,6 @@
 import React, { HTMLProps } from 'react';
-import mergeStyles from '@/helpers/mergeStyles';
 import ModalStyles from './Modal.module.scss';
+import useThemeClassName from '@/hooks/useThemeClassName';
 
 interface ModalProps extends HTMLProps<HTMLElement> {
     active: boolean;
@@ -8,16 +8,14 @@ interface ModalProps extends HTMLProps<HTMLElement> {
 }
 
 function Modal({ children, active, onClose }: ModalProps) {
-    const classNames = mergeStyles(ModalStyles.modal, active && ModalStyles.active);
-
     return (
         <div
-          className={classNames}
+          className={useThemeClassName(ModalStyles.modal, active ? ModalStyles.active : '')}
           onClick={onClose}
           role="dialog"
         >
             <div
-              className={ModalStyles.content}
+              className={useThemeClassName(ModalStyles.content)}
               onClick={(e) => e.stopPropagation()}
               role="dialog"
             >

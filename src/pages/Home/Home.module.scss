@@ -1,6 +1,6 @@
-@import 'mixins';
+@use 'mixins/ui';
 
 .Home {
-    @include absolute;
-    @include absolute-center($x: true, $y: true);
+    @include ui.absolute;
+    @include ui.absolute-center($x: true, $y: true);
 }

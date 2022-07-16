@@ -1,5 +1,5 @@
-@import 'variables';
-@import 'mixins';
+@use 'mixins/ui';
+@use 'mixins/themes';
 
 .modal {
     display: none;
@@ -12,14 +12,17 @@
     right: 0;
 
     .content {
+        @include themes.themes {
+            background: themes.theme-get(background);
+        }
+
         padding: 15px;
-        background: white;
         border-radius: 10px;
         min-width: 250px;
     }
 }
 
 .active {
-    @include flex;
-    @include flex-center($x: true, $y: true);
+    @include ui.flex;
+    @include ui.flex-center($x: true, $y: true);
 }

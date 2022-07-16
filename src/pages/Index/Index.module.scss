@@ -1,4 +1,4 @@
-@import 'variables';
+@use 'mixins/themes';
 
 * {
     margin: 0;
@@ -7,11 +7,12 @@
 }
 
 a {
-    color: $text-color;
     text-decoration: none;
 }
 
 body {
-    background: $bg;
-    color: $text-color;
+    @include themes.themes {
+        background: themes.theme-get(background);
+        color: themes.theme-get(text);
+    }
 }
