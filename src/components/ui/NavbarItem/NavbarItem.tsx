@@ -7,7 +7,7 @@ interface NavbarItemProps {
     icon: ReactNode | null;
 }
 
-function NavbarItem({ onClick, icon }: NavbarItemProps) {
+export default function NavbarItem({ onClick, icon }: NavbarItemProps) {
     return (
         <Button
           border={false}
@@ -17,5 +17,3 @@ function NavbarItem({ onClick, icon }: NavbarItemProps) {
         </Button>
     );
 }
-
-export default NavbarItem;

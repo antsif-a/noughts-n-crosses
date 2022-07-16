@@ -10,7 +10,7 @@ import generateCells from '@/helpers/generateCells';
 import PlayerType from '@/models/PlayerType';
 import GameStyles from './Game.module.scss';
 
-function Game() {
+export default function Game() {
     const [turn, setTurn, resetTurn] = useReusableState(PlayerType.X);
     const [cells, setCells, resetCells] = useReusableState(generateCells());
     const { winner, resetWinner } = useWinner(cells);
@@ -48,5 +48,3 @@ function Game() {
         </>
     );
 }
-
-export default Game;

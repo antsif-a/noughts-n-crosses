@@ -7,7 +7,7 @@ interface ButtonProps extends HTMLProps<HTMLButtonElement> {
     border?: boolean;
 }
 
-function Button({ children, border, ...props }: ButtonProps) {
+export default function Button({ children, border, ...props }: ButtonProps) {
     return (
         <button {...props} className={useThemeClassName(ButtonStyles.button, border ? ButtonStyles.border : '')}>
             {children}
@@ -19,5 +19,3 @@ Button.defaultProps = {
     type: 'button',
     border: true,
 };
-
-export default Button;

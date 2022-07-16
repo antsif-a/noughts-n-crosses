@@ -7,7 +7,7 @@ interface ModalProps extends HTMLProps<HTMLElement> {
     onClose: () => void;
 }
 
-function Modal({ children, active, onClose }: ModalProps) {
+export default function Modal({ children, active, onClose }: ModalProps) {
     return (
         <div
           className={useThemeClassName(ModalStyles.modal, active ? ModalStyles.active : '')}
@@ -24,5 +24,3 @@ function Modal({ children, active, onClose }: ModalProps) {
         </div>
     );
 }
-
-export default Modal;

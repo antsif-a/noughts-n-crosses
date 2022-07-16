@@ -9,7 +9,7 @@ interface CellProps {
     onClick: () => void;
 }
 
-function Cell({ cell, onClick }: CellProps) {
+export default function Cell({ cell, onClick }: CellProps) {
     return (
         <div className={CellStyles.cell}>
             <Button
@@ -21,5 +21,3 @@ function Cell({ cell, onClick }: CellProps) {
         </div>
     );
 }
-
-export default Cell;

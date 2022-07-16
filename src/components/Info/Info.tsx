@@ -8,7 +8,7 @@ interface InfoProps {
     onReset: () => void;
 }
 
-function Info({ turn, onReset }: InfoProps) {
+export default function Info({ turn, onReset }: InfoProps) {
     return (
         <div>
             <div className={InfoStyles.info}>
@@ -18,5 +18,3 @@ function Info({ turn, onReset }: InfoProps) {
         </div>
     );
 }
-
-export default Info;

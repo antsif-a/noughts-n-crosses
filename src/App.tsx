@@ -4,7 +4,7 @@ import Index from '@/pages/Index';
 import Home from '@/pages/Home';
 import Game from '@/pages/Game';
 
-function App() {
+export default function App() {
     return (
         <BrowserRouter>
             <Routes>
@@ -16,5 +16,3 @@ function App() {
         </BrowserRouter>
     );
 }
-
-export default App;

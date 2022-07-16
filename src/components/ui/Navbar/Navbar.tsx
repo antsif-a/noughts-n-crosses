@@ -22,7 +22,7 @@ interface NavbarProps {
     title: string;
 }
 
-function Navbar({ title }: NavbarProps) {
+export default function Navbar({ title }: NavbarProps) {
     const { pathname } = useLocation();
     const navigate = useNavigate();
     const { theme, toggleTheme } = useTheme();
@@ -46,5 +46,3 @@ function Navbar({ title }: NavbarProps) {
         </nav>
     );
 }
-
-export default Navbar;

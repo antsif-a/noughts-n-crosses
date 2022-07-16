@@ -11,7 +11,7 @@ interface BoardProps {
     setCells: (cells: CellData[]) => void;
 }
 
-function Board({
+export default function Board({
     turn,
     setTurn,
     cells,
@@ -43,5 +43,3 @@ function Board({
         </div>
     );
 }
-
-export default Board;
