@@ -1,5 +1,5 @@
-@use 'mixins/ui';
-@use 'mixins/themes';
+@use 'layout';
+@use 'themes';
 
 .modal {
     display: none;
@@ -23,6 +23,6 @@
 }
 
 .active {
-    @include ui.flex;
-    @include ui.flex-center($x: true, $y: true);
+    @include layout.flex;
+    @include layout.flex-center($x: true, $y: true);
 }

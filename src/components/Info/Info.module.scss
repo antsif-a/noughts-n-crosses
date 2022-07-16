@@ -1,7 +1,7 @@
-@use 'mixins/ui';
+@use 'layout';
 
 .info {
-    @include ui.flex;
-    @include ui.flex-space-between;
+    @include layout.flex;
+    @include layout.flex-space-between;
     margin-bottom: 20px;
 }

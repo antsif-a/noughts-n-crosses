@@ -1,8 +1,8 @@
-@use 'variables/ui';
+@use 'variables/board';
 
 .cell {
     position: relative;
-    height: min((#{ui.$board-min-size} / 3), calc(#{ui.$board-size} / 3));
+    height: min((#{board.$size} / 3), calc(#{board.$min-size} / 3));
 
     button {
         font-size: 3em;

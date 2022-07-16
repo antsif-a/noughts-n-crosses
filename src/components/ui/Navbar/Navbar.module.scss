@@ -1,10 +1,10 @@
-@use 'mixins/ui';
-@use 'mixins/themes';
+@use 'layout';
+@use 'themes';
 
 .navbar {
-    @include ui.flex;
-    @include ui.flex-space-between;
-    @include ui.flex-center($y: true);
+    @include layout.flex;
+    @include layout.flex-space-between;
+    @include layout.flex-center($y: true);
 
     @include themes.themes {
         background: themes.theme-get(background-accent);

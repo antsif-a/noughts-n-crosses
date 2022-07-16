@@ -1,6 +1,6 @@
-@use 'mixins/ui';
+@use 'layout';
 
 .Home {
-    @include ui.absolute;
-    @include ui.absolute-center($x: true, $y: true);
+    @include layout.absolute;
+    @include layout.absolute-center($x: true, $y: true);
 }

@@ -1,8 +1,8 @@
-@use 'variables/ui';
+@use 'variables/board';
 
 .board {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    width: min(#{ui.$board-min-size}, #{ui.$board-size});
+    width: min(#{board.$size}, #{board.$min-size});
 }
