@@ -1,18 +1,6 @@
-@use 'themes';
+@use 'layout';
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-a {
-    text-decoration: none;
-}
-
-body {
-    @include themes.themes {
-        background: themes.theme-get(background);
-        color: themes.theme-get(text);
-    }
+.Index {
+    @include layout.absolute;
+    @include layout.absolute-center($x: true, $y: true);
 }

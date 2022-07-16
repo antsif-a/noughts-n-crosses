@@ -1,15 +1,14 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Index from '@/pages/Index';
-import Home from '@/pages/Home';
+import Index, { IndexMiddleware } from '@/pages/Index';
 import Game from '@/pages/Game';
 
 export default function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Index />}>
-                    <Route index element={<Home />} />
+                <Route path="/" element={<IndexMiddleware />}>
+                    <Route index element={<Index />} />
                     <Route path="game" element={<Game />} />
                 </Route>
             </Routes>

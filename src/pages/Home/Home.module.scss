@@ -1,6 +1,0 @@
-@use 'layout';
-
-.Home {
-    @include layout.absolute;
-    @include layout.absolute-center($x: true, $y: true);
-}
