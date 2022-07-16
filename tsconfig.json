@@ -1,5 +1,5 @@
 {
-  "include": ["./src/**/*", "./custom.d.ts"],
+  "include": ["./src/**/*", "./lib/**/*"],
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
