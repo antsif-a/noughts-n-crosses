@@ -1,19 +1,18 @@
 import React, { ReactNode } from 'react';
 import Button from '@/components/ui/Button';
 
-// TODO: Make a component similar to this with `link` property
 interface NavbarItemProps {
+    children: ReactNode | null;
     onClick: () => void;
-    icon: ReactNode | null;
 }
 
-export default function NavbarItem({ onClick, icon }: NavbarItemProps) {
+export default function NavbarButton({ onClick, children }: NavbarItemProps) {
     return (
         <Button
           border={false}
           onClick={onClick}
         >
-            {icon}
+            {children}
         </Button>
     );
 }

@@ -1,0 +1,14 @@
+@use 'themes';
+
+.link {
+    @include themes.themes {
+        color: themes.theme-get(text);
+
+        &:not(:disabled):hover {
+            color: themes.theme-get(text-hover);
+        }
+    }
+
+    text-decoration: none;
+    margin: 0 10px;
+}

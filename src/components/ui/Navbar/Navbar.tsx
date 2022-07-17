@@ -1,47 +1,40 @@
-import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { HomeIcon, MoonIcon, SunIcon } from '@/components/icons';
-import NavbarItem from '@/components/ui/NavbarItem';
-import useTheme from '@/hooks/useTheme';
+import React, { ReactNode } from 'react';
+import NavbarButton from '@/components/ui/NavbarButton';
+import NavbarLink from '@/components/ui/NavbarLink';
 import useThemeClassName from '@/hooks/useThemeClassName';
-import ThemeType from '@/models/ThemeType';
 import NavbarStyles from './Navbar.module.scss';
 
-function getIconByTheme(theme: ThemeType) {
-    switch (theme) {
-        case ThemeType.light:
-            return <SunIcon width={24} />;
-        case ThemeType.dark:
-            return <MoonIcon width={24} />;
-        default:
-            return '';
-    }
+interface NavbarItem {
+    content: ReactNode | null;
+    onClick?: () => void;
+    to?: string;
 }
 
 interface NavbarProps {
     title: string;
+    items: NavbarItem[];
 }
 
-export default function Navbar({ title }: NavbarProps) {
-    const { pathname } = useLocation();
-    const navigate = useNavigate();
-    const { theme, toggleTheme } = useTheme();
+function renderItems(items: NavbarItem[]) {
+    return items.map((item) => {
+        if (item.onClick) {
+            return <NavbarButton onClick={item.onClick}>{item.content}</NavbarButton>;
+        }
 
+        if (item.to) {
+            return <NavbarLink to={item.to}>{item.content}</NavbarLink>;
+        }
+
+        throw new Error('Navbar item must have either "onClick" or "to" property');
+    });
+}
+
+export default function Navbar({ title, items }: NavbarProps) {
     return (
         <nav className={useThemeClassName(NavbarStyles.navbar)}>
             <h1 className={useThemeClassName(NavbarStyles.title)}>{title}</h1>
             <div>
-                {/* TODO: Render navbar items based on props */}
-                <NavbarItem
-                    onClick={toggleTheme}
-                    icon={getIconByTheme(theme)}
-                />
-                {pathname !== '/' && (
-                    <NavbarItem
-                        onClick={() => navigate('/')}
-                        icon={<HomeIcon width={24} />}
-                    />
-                )}
+                {renderItems(items)}
             </div>
         </nav>
     );

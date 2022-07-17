@@ -1,6 +1,6 @@
 import { HTMLAttributes } from 'react';
-import useTheme from '@/hooks/useTheme';
+import useThemeContext from '@/hooks/useThemeContext';
 
 export default function useThemeClassName<T>(...classNames: HTMLAttributes<T>['className'][]) {
-    return `${classNames.join(' ')} theme-${useTheme().theme}`;
+    return `${classNames.join(' ')} theme-${useThemeContext().theme}`;
 }

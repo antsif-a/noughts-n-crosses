@@ -6,10 +6,6 @@
     box-sizing: border-box;
 }
 
-a {
-    text-decoration: none;
-}
-
 body {
     @include themes.themes {
         background: themes.theme-get(background);
