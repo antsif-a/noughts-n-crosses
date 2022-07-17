@@ -1,5 +1,5 @@
 import React from 'react';
-import Cell from '@/components/Cell';
+import Cell from '@/components/content/Cell';
 import CellData from '@/models/CellData';
 import PlayerType from '@/models/PlayerType';
 import BoardStyles from './Board.module.scss';
