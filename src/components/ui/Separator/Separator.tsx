@@ -4,6 +4,6 @@ import SeparatorStyles from './Separator.module.scss';
 
 export default function Separator() {
     return (
-        <div className={useThemeClassName(SeparatorStyles.separator)} />
+        <span className={useThemeClassName(SeparatorStyles.separator)} />
     );
 }
