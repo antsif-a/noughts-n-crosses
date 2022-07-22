@@ -5,7 +5,7 @@ import Game from '@/pages/Game';
 
 export default function App() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/react-tic-tac-toe">
             <Routes>
                 <Route path="/" element={<IndexMiddleware />}>
                     <Route index element={<Index />} />

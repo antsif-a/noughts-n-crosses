@@ -9,6 +9,7 @@ module.exports = {
   entry: resolveApp('src/index'),
   output: {
     path: resolveApp('build'),
+    publicPath: 'auto',
     filename: '[chunkhash].js',
   },
   mode: 'development',
