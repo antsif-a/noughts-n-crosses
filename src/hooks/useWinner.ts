@@ -32,8 +32,12 @@ function checkDiagonal(cells: CellData[], diagonalLength: number, diagonal: numb
     );
 }
 
+function checkTie(cells: CellData[]) {
+    return cells.every((cell) => cell.owner !== PlayerType.none);
+}
+
 export default function useWinner(cells: CellData[]) {
-    const [winner, setWinner, resetWinner] = useReusableState<PlayerType>(PlayerType.none);
+    const [winner, setWinner, resetWinner] = useReusableState<PlayerType | null>(null);
 
     const lineLength = useMemo(() => Math.sqrt(cells.length), [cells.length]);
 
@@ -41,15 +45,24 @@ export default function useWinner(cells: CellData[]) {
         for (let i = 0; i < 2; i++) {
             if (checkDiagonal(cells, lineLength, i)) {
                 setWinner(cells[lineLength + 1].owner);
+                return;
             }
         }
 
         for (let i = 0; i < lineLength; i++) {
             if (checkRow(cells, lineLength, i)) {
                 setWinner(cells[i * lineLength].owner);
-            } else if (checkColumn(cells, lineLength, i)) {
-                setWinner(cells[i].owner);
+                return;
             }
+
+            if (checkColumn(cells, lineLength, i)) {
+                setWinner(cells[i].owner);
+                return;
+            }
+        }
+
+        if (checkTie(cells)) {
+            setWinner(PlayerType.none);
         }
     }, [cells, lineLength]);
 

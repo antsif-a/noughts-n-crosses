@@ -1,0 +1,6 @@
+@use 'layout';
+
+.container {
+    @include layout.flex;
+    @include layout.flex-center($x: true);
+}
