@@ -2,12 +2,11 @@
   "include": ["./src/**/*", "./lib/**/*"],
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "esnext",
-    "target": "es5",
-    "baseUrl": ".",
+    "module": "nodenext",
+    "target": "es2025",
     "paths": {
-      "@/*": ["src/*"],
-      "@assets/*": ["assets/*"],
+      "@/*": ["./src/*"],
+      "@assets/*": ["./assets/*"]
     },
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
@@ -17,5 +16,5 @@
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "strict": true
-  },
+  }
 }

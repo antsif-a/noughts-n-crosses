@@ -49,7 +49,7 @@ module.exports = {
           loader: 'sass-loader',
           options: {
             sassOptions: {
-              includePaths: [resolveApp('src/scss')],
+              loadPaths: [resolveApp('src/scss')],
             },
           },
         }],

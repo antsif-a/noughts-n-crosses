@@ -1,4 +1,5 @@
 @use 'sass:color';
+@use 'sass:map';
 
 $map: (
     light: (
@@ -21,8 +22,10 @@ $map: (
 );
 
 @function theme-get($key) {
-    @return map-get($theme-map, $key);
+    @return map.get($theme-map, $key);
 }
+
+$theme-map: null;
 
 @mixin themes {
     @each $theme-name, $theme-properties in $map {
